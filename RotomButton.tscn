@@ -1,0 +1,60 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://RotomButton.gd" type="Script" id=1]
+[ext_resource path="res://LayersBasic.gd" type="Script" id=2]
+[ext_resource path="res://Assets/rotombutton.png" type="Texture" id=3]
+[ext_resource path="res://Assets/button_pushed.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/button_released.wav" type="AudioStream" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7.5, 7.5 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 20, 20 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 20, 20, 20 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 40, 20, 20 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="RotomButton" type="Area2D"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Layers" type="Node2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="Layer1" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 5 )
+
+[node name="Layer2" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 5 )
+
+[node name="Layer3" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 5 )
+
+[node name="PushSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+
+[node name="UnpushSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+
+[connection signal="body_entered" from="." to="." method="_on_RotomButton_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_RotomButton_body_exited"]

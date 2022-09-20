@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/cube_pushable_0.png" type="Texture" id=1]
+[ext_resource path="res://LayersPushable.gd" type="Script" id=2]
+[ext_resource path="res://Pushable.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Pushable" type="KinematicBody2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Layers" type="Node2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="Layer1" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 2 )
+
+[node name="Layer2" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 2 )
+
+[node name="Layer3" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 2 )
+
+[node name="Layer4" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 2 )
+
+[node name="Layer5" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 2 )
+
+[node name="Layer6" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 2 )
+
+[node name="Layer7" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 2 )
+
+[node name="Layer8" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 2 )
+
+[node name="Layer9" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 2 )
+
+[node name="Layer10" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 2 )
+
+[node name="Layer11" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 2 )

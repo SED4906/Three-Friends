@@ -1,0 +1,99 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/coob_0.png" type="Texture" id=1]
+[ext_resource path="res://Layers.gd" type="Script" id=2]
+[ext_resource path="res://Assets/coob_1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/coob_2.png" type="Texture" id=4]
+[ext_resource path="res://Player.gd" type="Script" id=5]
+[ext_resource path="res://Assets/light_0.png" type="Texture" id=6]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "eyes",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "mouth",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16, 16 )
+
+[sub_resource type="AudioStreamGenerator" id=3]
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 5 )
+
+[node name="Layers" type="Node2D" parent="."]
+scale = Vector2( 2, 2 )
+script = ExtResource( 2 )
+
+[node name="Layer1" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 1 )
+animation = "mouth"
+
+[node name="Layer2" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 1 )
+animation = "mouth"
+
+[node name="Layer3" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 1 )
+animation = "mouth"
+
+[node name="Layer4" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 1 )
+animation = "mouth"
+
+[node name="Layer5" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 1 )
+animation = "mouth"
+
+[node name="Layer6" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 1 )
+animation = "mouth"
+
+[node name="Layer7" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 1 )
+animation = "mouth"
+
+[node name="Layer8" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 1 )
+animation = "mouth"
+
+[node name="Layer9" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 1 )
+animation = "mouth"
+
+[node name="Layer10" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 1 )
+animation = "mouth"
+
+[node name="Layer11" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 1 )
+animation = "mouth"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 6 )
+texture_scale = 8.0
+energy = 0.25
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 0.25098 )
+shadow_filter = 5
+
+[node name="Movement" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource( 3 )

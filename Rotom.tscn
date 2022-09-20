@@ -1,0 +1,199 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://LayersPlatform.gd" type="Script" id=1]
+[ext_resource path="res://Player.gd" type="Script" id=2]
+[ext_resource path="res://Assets/light_0.png" type="Texture" id=3]
+[ext_resource path="res://Assets/rotom.png" type="Texture" id=4]
+[ext_resource path="res://Assets/rotom_bg.png" type="Texture" id=5]
+[ext_resource path="res://Assets/rotom_effect.png" type="Texture" id=6]
+[ext_resource path="res://RotomEffect.gd" type="Script" id=7]
+
+[sub_resource type="SpriteFrames" id=53]
+animations = [ {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 8, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 16, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 24, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 32, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 40, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 48, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 56, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 64, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 72, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 80, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=44]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 88, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=45]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 96, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=46]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 104, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=47]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 112, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=48]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 120, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=49]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 128, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=50]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 136, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=51]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 144, 8, 8 )
+
+[sub_resource type="SpriteFrames" id=52]
+animations = [ {
+"frames": [ SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=32]
+extents = Vector2( 4, 4 )
+
+[sub_resource type="AudioStreamGenerator" id=54]
+
+[node name="Rotom" type="KinematicBody2D"]
+script = ExtResource( 2 )
+deceleration_factor = 10.0
+acceleration_factor = 400.0
+maximum_speed = 80.0
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -8 )
+frames = SubResource( 53 )
+
+[node name="Layers" type="Node2D" parent="."]
+script = ExtResource( 1 )
+
+[node name="Layer1" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 52 )
+
+[node name="Layer2" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 52 )
+
+[node name="Layer3" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 52 )
+
+[node name="Layer4" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 52 )
+
+[node name="Layer5" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 52 )
+
+[node name="Layer6" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 52 )
+
+[node name="Layer7" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 52 )
+
+[node name="Layer8" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 52 )
+
+[node name="Layer9" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 52 )
+
+[node name="Layer10" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 52 )
+frame = 8
+
+[node name="Layer11" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 52 )
+
+[node name="Layer12" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 52 )
+
+[node name="Layer13" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 52 )
+
+[node name="Layer14" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 52 )
+
+[node name="Layer15" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 52 )
+
+[node name="Layer16" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 52 )
+
+[node name="Layer17" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 52 )
+
+[node name="Layer18" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 52 )
+
+[node name="Layer19" type="AnimatedSprite" parent="Layers"]
+frames = SubResource( 52 )
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource( 32 )
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 3 )
+texture_scale = 8.0
+energy = 0.25
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 0.25098 )
+shadow_filter = 5
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+z_index = 4
+texture = ExtResource( 6 )
+script = ExtResource( 7 )
+
+[node name="Movement" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource( 54 )
