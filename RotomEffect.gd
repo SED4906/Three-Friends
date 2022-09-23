@@ -15,6 +15,7 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("sed_ability"):
 		visible=true
+		$"../Ability".play()
 	if Input.is_action_just_released("sed_ability"):
 		visible=false
-
+		$"../Ability".stop()

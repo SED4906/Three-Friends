@@ -1,25 +1,25 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Map.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Level.gd" type="Script" id=3]
-[ext_resource path="res://Platform.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Rotom.tscn" type="PackedScene" id=5]
-[ext_resource path="res://CubeButton.tscn" type="PackedScene" id=6]
-[ext_resource path="res://ForceField.gd" type="Script" id=7]
+[ext_resource path="res://Level.gd" type="Script" id=1]
+[ext_resource path="res://RotomButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://CubeButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Map.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Platform.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Rotom.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Pushable.tscn" type="PackedScene" id=8]
-[ext_resource path="res://RotomButton.tscn" type="PackedScene" id=9]
+[ext_resource path="res://ForceField.gd" type="Script" id=9]
 
 [node name="Level" type="YSort"]
-script = ExtResource( 3 )
+script = ExtResource( 1 )
 
-[node name="Map" parent="." instance=ExtResource( 2 )]
+[node name="Map" parent="." instance=ExtResource( 4 )]
 scale = Vector2( 2, 2 )
 
 [node name="Players" type="YSort" parent="."]
 
-[node name="Cube" parent="Players" instance=ExtResource( 1 )]
-position = Vector2( 112, 80 )
+[node name="Cube" parent="Players" instance=ExtResource( 5 )]
+position = Vector2( 296, 1616 )
 z_index = 1
 deceleration_factor = 3.0
 acceleration_factor = 200.0
@@ -27,23 +27,23 @@ maximum_speed = 60.0
 active_player = true
 can_push_cube_buttons = true
 
-[node name="Platform" parent="Players" instance=ExtResource( 4 )]
-position = Vector2( 56, 40 )
+[node name="Platform" parent="Players" instance=ExtResource( 6 )]
+position = Vector2( 240, 1576 )
 scale = Vector2( 2, 2 )
 z_index = 1
 deceleration_factor = 4.0
 acceleration_factor = 200.0
 maximum_speed = 80.0
 
-[node name="Rotom" parent="Players" instance=ExtResource( 5 )]
-position = Vector2( 160, 56 )
+[node name="Rotom" parent="Players" instance=ExtResource( 7 )]
+position = Vector2( 344, 1592 )
 scale = Vector2( 2, 2 )
 z_index = 1
 acceleration_factor = 600.0
 can_push_rotom_buttons = true
 
 [node name="ForceField1" type="StaticBody2D" parent="."]
-script = ExtResource( 7 )
+script = ExtResource( 9 )
 
 [node name="Line2D" type="Line2D" parent="ForceField1"]
 points = PoolVector2Array( 576, 320, 576, 448 )
@@ -53,7 +53,7 @@ antialiased = true
 polygon = PoolVector2Array( 584, 320, 584, 448, 568, 448, 568, 320 )
 
 [node name="ForceField3" type="StaticBody2D" parent="."]
-script = ExtResource( 7 )
+script = ExtResource( 9 )
 
 [node name="Line2D" type="Line2D" parent="ForceField3"]
 points = PoolVector2Array( 1088, 928, 960, 928 )
@@ -63,7 +63,7 @@ antialiased = true
 polygon = PoolVector2Array( 1088, 936, 960, 936, 960, 920, 1088, 920 )
 
 [node name="ForceField4" type="StaticBody2D" parent="."]
-script = ExtResource( 7 )
+script = ExtResource( 9 )
 
 [node name="Line2D" type="Line2D" parent="ForceField4"]
 points = PoolVector2Array( 640, 1344, 640, 1216 )
@@ -73,7 +73,7 @@ antialiased = true
 polygon = PoolVector2Array( 632, 1344, 632, 1216, 648, 1216, 648, 1344 )
 
 [node name="ForceField5" type="StaticBody2D" parent="."]
-script = ExtResource( 7 )
+script = ExtResource( 9 )
 swiched_off_threshold = 1
 
 [node name="Line2D" type="Line2D" parent="ForceField5"]
@@ -84,7 +84,7 @@ antialiased = true
 polygon = PoolVector2Array( 1024, 1192, 952, 1120, 960, 1112, 1032, 1184 )
 
 [node name="ForceField6" type="StaticBody2D" parent="."]
-script = ExtResource( 7 )
+script = ExtResource( 9 )
 
 [node name="Line2D" type="Line2D" parent="ForceField6"]
 points = PoolVector2Array( 448, 832, 448, 768 )
@@ -94,7 +94,7 @@ antialiased = true
 polygon = PoolVector2Array( 440, 832, 440, 768, 456, 768, 456, 832 )
 
 [node name="ForceField7" type="StaticBody2D" parent="."]
-script = ExtResource( 7 )
+script = ExtResource( 9 )
 
 [node name="Line2D" type="Line2D" parent="ForceField7"]
 points = PoolVector2Array( 352, 1504, 224, 1504 )
@@ -104,7 +104,7 @@ antialiased = true
 polygon = PoolVector2Array( 352, 1512, 224, 1512, 224, 1496, 352, 1496 )
 
 [node name="ForceField8" type="StaticBody2D" parent="."]
-script = ExtResource( 7 )
+script = ExtResource( 9 )
 swiched_off_threshold = 1
 
 [node name="Line2D" type="Line2D" parent="ForceField8"]
@@ -115,7 +115,7 @@ antialiased = true
 polygon = PoolVector2Array( 600, 1824, 600, 1696, 616, 1696, 616, 1824 )
 
 [node name="ForceField9" type="StaticBody2D" parent="."]
-script = ExtResource( 7 )
+script = ExtResource( 9 )
 
 [node name="Line2D" type="Line2D" parent="ForceField9"]
 points = PoolVector2Array( 992, 2400, 864, 2400 )
@@ -124,72 +124,12 @@ antialiased = true
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ForceField9"]
 polygon = PoolVector2Array( 992, 2408, 864, 2408, 864, 2392, 992, 2392 )
 
-[node name="ForceField10" type="StaticBody2D" parent="."]
-script = ExtResource( 7 )
-
-[node name="Line2D" type="Line2D" parent="ForceField10"]
-points = PoolVector2Array( 32, 2624, 32, 2560 )
-antialiased = true
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ForceField10"]
-polygon = PoolVector2Array( 24, 2624, 24, 2560, 40, 2560, 40, 2624 )
-
-[node name="ForceField11" type="StaticBody2D" parent="."]
-script = ExtResource( 7 )
-
-[node name="Line2D" type="Line2D" parent="ForceField11"]
-points = PoolVector2Array( 288, 2720, 288, 2656 )
-antialiased = true
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ForceField11"]
-polygon = PoolVector2Array( 280, 2720, 280, 2656, 296, 2656, 296, 2720 )
-
-[node name="ForceField12" type="StaticBody2D" parent="."]
-script = ExtResource( 7 )
-
-[node name="Line2D" type="Line2D" parent="ForceField12"]
-points = PoolVector2Array( -96, 2752, -96, 2624 )
-antialiased = true
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ForceField12"]
-polygon = PoolVector2Array( -104, 2752, -104, 2624, -88, 2624, -88, 2752 )
-
-[node name="ForceField13" type="StaticBody2D" parent="."]
-script = ExtResource( 7 )
-
-[node name="Line2D" type="Line2D" parent="ForceField13"]
-points = PoolVector2Array( 640, 3136, 736, 3136 )
-antialiased = true
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ForceField13"]
-polygon = PoolVector2Array( 640, 3128, 736, 3128, 736, 3144, 640, 3144 )
-
-[node name="ForceField14" type="StaticBody2D" parent="."]
-script = ExtResource( 7 )
-
-[node name="Line2D" type="Line2D" parent="ForceField14"]
-points = PoolVector2Array( 1312, 2400, 1376, 2400 )
-antialiased = true
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ForceField14"]
-polygon = PoolVector2Array( 1312, 2392, 1376, 2392, 1376, 2408, 1312, 2408 )
-
-[node name="ForceField15" type="StaticBody2D" parent="."]
-script = ExtResource( 7 )
-
-[node name="Line2D" type="Line2D" parent="ForceField15"]
-points = PoolVector2Array( 1600, 2496, 1600, 2368 )
-antialiased = true
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ForceField15"]
-polygon = PoolVector2Array( 1608, 2368, 1608, 2496, 1592, 2496, 1592, 2368 )
-
-[node name="CubeButton" parent="." instance=ExtResource( 6 )]
+[node name="CubeButton" parent="." instance=ExtResource( 3 )]
 position = Vector2( 352, 480 )
 scale = Vector2( 2, 2 )
 target = "Level/ForceField1"
 
-[node name="CubeButton2" parent="." instance=ExtResource( 6 )]
+[node name="CubeButton2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1024, 416 )
 scale = Vector2( 2, 2 )
 target = "Level/ForceField2"
@@ -230,26 +170,8 @@ scale = Vector2( 2, 2 )
 z_index = 1
 pullable = true
 
-[node name="Pushable8" parent="." instance=ExtResource( 8 )]
-position = Vector2( 64, 2592 )
-scale = Vector2( 2, 2 )
-z_index = 1
-pullable = true
-
-[node name="Pushable9" parent="." instance=ExtResource( 8 )]
-position = Vector2( 640, 2880 )
-scale = Vector2( 2, 2 )
-z_index = 1
-pullable = true
-
-[node name="Pushable10" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1344, 2336 )
-scale = Vector2( 2, 2 )
-z_index = 1
-pullable = true
-
 [node name="ForceField2" type="StaticBody2D" parent="."]
-script = ExtResource( 7 )
+script = ExtResource( 9 )
 
 [node name="Line2D" type="Line2D" parent="ForceField2"]
 points = PoolVector2Array( 1024, 512, 1024, 608 )
@@ -264,85 +186,55 @@ scale = Vector2( 2, 2 )
 z_index = 1
 pullable = true
 
-[node name="CubeButton3" parent="." instance=ExtResource( 6 )]
+[node name="CubeButton3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 864, 288 )
 scale = Vector2( 2, 2 )
 target = "Level/ForceField1"
 
-[node name="CubeButton4" parent="." instance=ExtResource( 6 )]
+[node name="CubeButton4" parent="." instance=ExtResource( 3 )]
 position = Vector2( 864, 1280 )
 scale = Vector2( 2, 2 )
 target = "Level/ForceField4"
 
-[node name="CubeButton5" parent="." instance=ExtResource( 6 )]
+[node name="CubeButton5" parent="." instance=ExtResource( 3 )]
 position = Vector2( 864, 1088 )
 scale = Vector2( 2, 2 )
 target = "Level/ForceField5"
 
-[node name="CubeButton6" parent="." instance=ExtResource( 6 )]
+[node name="CubeButton6" parent="." instance=ExtResource( 3 )]
 position = Vector2( 384, 1056 )
 scale = Vector2( 2, 2 )
 target = "Level/ForceField6"
 
-[node name="CubeButton7" parent="." instance=ExtResource( 6 )]
+[node name="CubeButton7" parent="." instance=ExtResource( 3 )]
 position = Vector2( 288, 1720 )
 scale = Vector2( 2, 2 )
 target = "Level/ForceField8"
 
-[node name="CubeButton8" parent="." instance=ExtResource( 6 )]
+[node name="CubeButton8" parent="." instance=ExtResource( 3 )]
 position = Vector2( 288, 1800 )
 scale = Vector2( 2, 2 )
 target = "Level/ForceField8"
 
-[node name="CubeButton9" parent="." instance=ExtResource( 6 )]
+[node name="CubeButton9" parent="." instance=ExtResource( 3 )]
 position = Vector2( 800, 2336 )
 scale = Vector2( 2, 2 )
 target = "Level/ForceField9"
 
-[node name="CubeButton10" parent="." instance=ExtResource( 6 )]
-position = Vector2( 96, 2720 )
-scale = Vector2( 2, 2 )
-target = "Level/ForceField10"
-
-[node name="CubeButton11" parent="." instance=ExtResource( 6 )]
-position = Vector2( -32, 2784 )
-scale = Vector2( 2, 2 )
-target = "Level/ForceField12"
-
-[node name="CubeButton12" parent="." instance=ExtResource( 6 )]
-position = Vector2( 736, 2880 )
-scale = Vector2( 2, 2 )
-target = "Level/ForceField13"
-
-[node name="CubeButton13" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1536, 2336 )
-scale = Vector2( 2, 2 )
-target = "Level/ForceField15"
-
-[node name="RotomButton" parent="." instance=ExtResource( 9 )]
+[node name="RotomButton" parent="." instance=ExtResource( 2 )]
 position = Vector2( 736, 864 )
 scale = Vector2( 2, 2 )
 target = "Level/ForceField3"
 
-[node name="RotomButton2" parent="." instance=ExtResource( 9 )]
+[node name="RotomButton2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 864, 1152 )
 scale = Vector2( 2, 2 )
 target = "Level/ForceField5"
 
-[node name="RotomButton3" parent="." instance=ExtResource( 9 )]
+[node name="RotomButton3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 384, 792 )
 scale = Vector2( 2, 2 )
 target = "Level/ForceField7"
-
-[node name="RotomButton4" parent="." instance=ExtResource( 9 )]
-position = Vector2( 224, 2688 )
-scale = Vector2( 2, 2 )
-target = "Level/ForceField11"
-
-[node name="RotomButton5" parent="." instance=ExtResource( 9 )]
-position = Vector2( 1248, 2464 )
-scale = Vector2( 2, 2 )
-target = "Level/ForceField14"
 
 [connection signal="body_exited" from="CubeButton" to="CubeButton" method="_on_CubeButton_body_exited"]
 [connection signal="body_exited" from="CubeButton2" to="CubeButton2" method="_on_CubeButton_body_exited"]
@@ -353,7 +245,3 @@ target = "Level/ForceField14"
 [connection signal="body_exited" from="CubeButton7" to="CubeButton7" method="_on_CubeButton_body_exited"]
 [connection signal="body_exited" from="CubeButton8" to="CubeButton8" method="_on_CubeButton_body_exited"]
 [connection signal="body_exited" from="CubeButton9" to="CubeButton9" method="_on_CubeButton_body_exited"]
-[connection signal="body_exited" from="CubeButton10" to="CubeButton10" method="_on_CubeButton_body_exited"]
-[connection signal="body_exited" from="CubeButton11" to="CubeButton11" method="_on_CubeButton_body_exited"]
-[connection signal="body_exited" from="CubeButton12" to="CubeButton12" method="_on_CubeButton_body_exited"]
-[connection signal="body_exited" from="CubeButton13" to="CubeButton13" method="_on_CubeButton_body_exited"]
