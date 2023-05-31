@@ -19,13 +19,17 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_pressed("platform_ability") and pullable and get_local_mouse_position().length() < 24:
+	if Input.is_action_pressed("platform_ability") and pullable and get_local_mouse_position().length() < 16:
 		var platpos = get_tree().root.get_node("Level/Players/Platform").position
-		if (platpos - position).length() < 256:
+		if (platpos - position).length() < 288:
 			show_rotation_of = get_angle_to(platpos)
 			velocity += (platpos-position).normalized()*16.0
 			velocity = velocity.clamped(128)
+			$Layers.modulate.h = 0.8
+			$Layers.modulate.s = 1.0
 	else:
+		$Layers.modulate.h = 0.0
+		$Layers.modulate.s = 0.0
 		velocity /= 8.0
 
 func _physics_process(delta):
