@@ -153,6 +153,12 @@ z_index = 4
 texture = ExtResource( 5 )
 script = ExtResource( 6 )
 
+[node name="Line2D" type="Line2D" parent="."]
+z_index = 4
+points = PoolVector2Array( 0, 0, 0, 0 )
+width = 2.0
+default_color = Color( 1, 0.501961, 1, 1 )
+
 [node name="Movement" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 7 )
 

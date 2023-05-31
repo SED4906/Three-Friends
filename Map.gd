@@ -16,7 +16,7 @@ func _ready():
 	var i=0
 	for layer in $".".get_children():
 		if layer != $"Layer1":
-			for n in [12,13,14,15,16,17,18,19,20]:
+			for n in [12,13,14,15,16,17,18,19,20,21,22,23]:
 				for cell in layer.get_used_cells_by_id(n):
 					layer.set_cellv(cell,-1)
 		layer.translate(Vector2(0,-i))

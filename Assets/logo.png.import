@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/rotombutton.png-0af9b6a4578708e538bcc7acad39d8f1.stex"
+path="res://.import/logo.png-d03fba62c7db4186a5557663390ad40b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/rotombutton.png"
-dest_files=[ "res://.import/rotombutton.png-0af9b6a4578708e538bcc7acad39d8f1.stex" ]
+source_file="res://Assets/logo.png"
+dest_files=[ "res://.import/logo.png-d03fba62c7db4186a5557663390ad40b.stex" ]
 
 [params]
 
