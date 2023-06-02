@@ -181,7 +181,7 @@ antialiased = true
 polygon = PoolVector2Array( 1032, 512, 1032, 608, 1016, 608, 1016, 512 )
 
 [node name="Pushable2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 736, 656 )
+position = Vector2( 770, 460 )
 scale = Vector2( 2, 2 )
 z_index = 1
 pullable = true
