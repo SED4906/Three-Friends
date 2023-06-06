@@ -119,6 +119,7 @@ script = ExtResource( 7 )
 
 [node name="Line2D" type="Line2D" parent="ForceField9"]
 points = PoolVector2Array( 992, 2400, 864, 2400 )
+default_color = Color( 0.4, 0.501961, 1, 1 )
 antialiased = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ForceField9"]
