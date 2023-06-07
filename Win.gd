@@ -1,4 +1,4 @@
-extends Area2D
+extends Node2D
 
 
 # Declare member variables here. Examples:
@@ -13,5 +13,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if get_overlapping_bodies().size() == 3:
-		get_tree().change_scene("res://Win.tscn")
+	if Input.is_action_just_pressed("exit_game"):
+		get_tree().quit(0)
