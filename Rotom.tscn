@@ -188,8 +188,6 @@ shadow_enabled = true
 shadow_color = Color( 0, 0, 0, 0.25098 )
 shadow_filter = 5
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="Sprite" type="Sprite" parent="."]
 visible = false
 z_index = 4

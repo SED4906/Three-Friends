@@ -247,6 +247,10 @@ target = "Level/ForceField7"
 [node name="FinishLine" parent="." instance=ExtResource( 10 )]
 position = Vector2( 928, 2468 )
 
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+smoothing_enabled = true
+
 [connection signal="body_exited" from="CubeButton" to="CubeButton" method="_on_CubeButton_body_exited"]
 [connection signal="body_exited" from="CubeButton2" to="CubeButton2" method="_on_CubeButton_body_exited"]
 [connection signal="body_exited" from="CubeButton3" to="CubeButton3" method="_on_CubeButton_body_exited"]

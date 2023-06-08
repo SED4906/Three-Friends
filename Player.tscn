@@ -81,9 +81,6 @@ animation = "mouth"
 frames = SubResource( 1 )
 animation = "mouth"
 
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
-
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
 

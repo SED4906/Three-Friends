@@ -5,7 +5,6 @@ extends Node2D
 # var a = 2
 # var b = "text"
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	OS.window_borderless = true
@@ -16,6 +15,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	get_node("/root/Stopwatch").time_taken += delta
 	if Input.is_action_just_pressed("exit_game"):
 		get_tree().quit(0)
 	if Input.is_action_just_pressed("switch_player"):
@@ -33,3 +33,6 @@ func _process(delta):
 			for player in $"Players".get_children():
 				player.active_player = true
 				break
+	for player in $"Players".get_children():
+		if player.active_player:
+			$Camera2D.position = player.position

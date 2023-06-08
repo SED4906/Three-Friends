@@ -22,6 +22,3 @@ func _process(delta):
 		for layer in $".".get_children():
 			layer.rotation = get_angle_to(pos)
 		$"../Collision".rotation = get_angle_to(pos)
-		$"../Camera2D".current = true
-	else:
-		$"../Camera2D".current = false

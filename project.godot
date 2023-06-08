@@ -14,6 +14,10 @@ config/name="Three Friends"
 run/main_scene="res://Title.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Stopwatch="*res://Stopwatch.tscn"
+
 [display]
 
 window/size/borderless=true
